@@ -1,0 +1,352 @@
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ node /bin/www.js
+module.js:540
+    throw err;
+    ^
+
+Error: Cannot find module '/bin/www.js'
+    at Function.Module._resolveFilename (module.js:538:15)
+    at Function.Module._load (module.js:468:25)
+    at Function.Module.runMain (module.js:684:10)
+    at startup (bootstrap_node.js:187:16)
+    at bootstrap_node.js:608:3
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ ls
+app.js  app.spec.js  bin  node_modules  package.json  package-lock.json
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ node '/bin/www.js'
+module.js:540
+    throw err;
+    ^
+
+Error: Cannot find module '/bin/www.js'
+    at Function.Module._resolveFilename (module.js:538:15)
+    at Function.Module._load (module.js:468:25)
+    at Function.Module.runMain (module.js:684:10)
+    at startup (bootstrap_node.js:187:16)
+    at bootstrap_node.js:608:3
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ cd bin
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ ls
+www.js
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ node www.js
+Server started!!
+^C
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ npm run lint
+
+> ngapp@1.0.0 lint /home/ubuntu/Desktop/ngapp
+> eslint .
+
+
+/home/ubuntu/Desktop/ngapp/app.js
+   1:11  error  Infix operators must be spaced                 space-infix-ops
+   3:38  error  A space is required after ','                  comma-spacing
+   3:42  error  Missing space before =>                        arrow-spacing
+   3:45  error  Missing space after =>                         arrow-spacing
+   4:1   error  Expected space(s) after "if"                   keyword-spacing
+   4:1   error  Expected indentation of 2 spaces but found 0   indent
+   4:24  error  Block must not be padded by blank lines        padded-blocks
+   4:24  error  Missing space before opening brace             space-before-blocks
+   7:1   error  Expected indentation of 2 spaces but found 0   indent
+   7:2   error  Expected space(s) after "else"                 keyword-spacing
+   7:2   error  Expected space(s) before "else"                keyword-spacing
+   8:1   error  Expected indentation of 4 spaces but found 0   indent
+  10:1   error  Expected indentation of 2 spaces but found 0   indent
+  10:1   error  Block must not be padded by blank lines        padded-blocks
+  13:25  error  Newline required at end of file but not found  eol-last
+
+/home/ubuntu/Desktop/ngapp/app.spec.js
+   5:15  error    A space is required after ','                  comma-spacing
+   5:17  error    Missing space before =>                        arrow-spacing
+   5:20  error    Block must not be padded by blank lines        padded-blocks
+   5:20  error    Missing space after =>                         arrow-spacing
+   7:1   error    Expected indentation of 2 spaces but found 0   indent
+   7:49  error    A space is required after ','                  comma-spacing
+   7:55  error    Missing space before =>                        arrow-spacing
+   7:58  error    Missing space after =>                         arrow-spacing
+   9:1   error    Expected indentation of 6 spaces but found 8   indent
+  10:1   error    Expected indentation of 6 spaces but found 8   indent
+  11:1   error    Expected indentation of 6 spaces but found 8   indent
+  11:18  error    A space is required after ','                  comma-spacing
+  11:22  error    Missing space before =>                        arrow-spacing
+  11:25  error    Missing space after =>                         arrow-spacing
+  12:1   error    Expected indentation of 8 spaces but found 12  indent
+  12:13  warning  Unexpected console statement                   no-console
+  13:1   error    Expected indentation of 8 spaces but found 12  indent
+  14:1   error    Expected indentation of 8 spaces but found 12  indent
+  15:1   error    Expected indentation of 6 spaces but found 8   indent
+  15:11  error    Missing semicolon                              semi
+  16:1   error    Expected indentation of 2 spaces but found 0   indent
+  18:1   error    Block must not be padded by blank lines        padded-blocks
+  18:4   error    Newline required at end of file but not found  eol-last
+
+/home/ubuntu/Desktop/ngapp/bin/www.js
+  3:16  error    A space is required after ','                  comma-spacing
+  3:18  error    Missing space before =>                        arrow-spacing
+  3:21  error    Missing space after =>                         arrow-spacing
+  3:21  error    Block must not be padded by blank lines        padded-blocks
+  5:1   warning  Unexpected console statement                   no-console
+  5:1   error    Expected indentation of 2 spaces but found 0   indent
+  6:4   error    Newline required at end of file but not found  eol-last
+
+✖ 45 problems (43 errors, 2 warnings)
+  43 errors, 0 warnings potentially fixable with the `--fix` option.
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! ngapp@1.0.0 lint: `eslint .`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the ngapp@1.0.0 lint script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-06-03T10_05_29_944Z-debug.log
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ eslint help
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ eslint . --fix
+Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngapp/.eslintrc.yml
+Error: Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngapp/.eslintrc.yml
+    at ModuleResolver.resolve (/usr/lib/node_modules/eslint/lib/util/module-resolver.js:74:19)
+    at resolve (/usr/lib/node_modules/eslint/lib/config/config-file.js:479:28)
+    at load (/usr/lib/node_modules/eslint/lib/config/config-file.js:551:26)
+    at configExtends.reduceRight (/usr/lib/node_modules/eslint/lib/config/config-file.js:425:36)
+    at Array.reduceRight (<anonymous>)
+    at applyExtends (/usr/lib/node_modules/eslint/lib/config/config-file.js:403:26)
+    at loadFromDisk (/usr/lib/node_modules/eslint/lib/config/config-file.js:523:22)
+    at Object.load (/usr/lib/node_modules/eslint/lib/config/config-file.js:559:20)
+    at Config.getLocalConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:227:44)
+    at Config.getConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:179:43)
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ npm run lint --fix
+
+> ngapp@1.0.0 lint /home/ubuntu/Desktop/ngapp
+> eslint .
+
+
+/home/ubuntu/Desktop/ngapp/app.js
+   1:11  error  Infix operators must be spaced                 space-infix-ops
+   3:38  error  A space is required after ','                  comma-spacing
+   3:42  error  Missing space before =>                        arrow-spacing
+   3:45  error  Missing space after =>                         arrow-spacing
+   4:1   error  Expected space(s) after "if"                   keyword-spacing
+   4:1   error  Expected indentation of 2 spaces but found 0   indent
+   4:24  error  Block must not be padded by blank lines        padded-blocks
+   4:24  error  Missing space before opening brace             space-before-blocks
+   7:1   error  Expected indentation of 2 spaces but found 0   indent
+   7:2   error  Expected space(s) after "else"                 keyword-spacing
+   7:2   error  Expected space(s) before "else"                keyword-spacing
+   8:1   error  Expected indentation of 4 spaces but found 0   indent
+  10:1   error  Expected indentation of 2 spaces but found 0   indent
+  10:1   error  Block must not be padded by blank lines        padded-blocks
+  13:25  error  Newline required at end of file but not found  eol-last
+
+/home/ubuntu/Desktop/ngapp/app.spec.js
+   5:15  error    A space is required after ','                  comma-spacing
+   5:17  error    Missing space before =>                        arrow-spacing
+   5:20  error    Block must not be padded by blank lines        padded-blocks
+   5:20  error    Missing space after =>                         arrow-spacing
+   7:1   error    Expected indentation of 2 spaces but found 0   indent
+   7:49  error    A space is required after ','                  comma-spacing
+   7:55  error    Missing space before =>                        arrow-spacing
+   7:58  error    Missing space after =>                         arrow-spacing
+   9:1   error    Expected indentation of 6 spaces but found 8   indent
+  10:1   error    Expected indentation of 6 spaces but found 8   indent
+  11:1   error    Expected indentation of 6 spaces but found 8   indent
+  11:18  error    A space is required after ','                  comma-spacing
+  11:22  error    Missing space before =>                        arrow-spacing
+  11:25  error    Missing space after =>                         arrow-spacing
+  12:1   error    Expected indentation of 8 spaces but found 12  indent
+  12:13  warning  Unexpected console statement                   no-console
+  13:1   error    Expected indentation of 8 spaces but found 12  indent
+  14:1   error    Expected indentation of 8 spaces but found 12  indent
+  15:1   error    Expected indentation of 6 spaces but found 8   indent
+  15:11  error    Missing semicolon                              semi
+  16:1   error    Expected indentation of 2 spaces but found 0   indent
+  18:1   error    Block must not be padded by blank lines        padded-blocks
+  18:4   error    Newline required at end of file but not found  eol-last
+
+/home/ubuntu/Desktop/ngapp/bin/www.js
+  3:16  error    A space is required after ','                  comma-spacing
+  3:18  error    Missing space before =>                        arrow-spacing
+  3:21  error    Missing space after =>                         arrow-spacing
+  3:21  error    Block must not be padded by blank lines        padded-blocks
+  5:1   warning  Unexpected console statement                   no-console
+  5:1   error    Expected indentation of 2 spaces but found 0   indent
+  6:4   error    Newline required at end of file but not found  eol-last
+
+✖ 45 problems (43 errors, 2 warnings)
+  43 errors, 0 warnings potentially fixable with the `--fix` option.
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! ngapp@1.0.0 lint: `eslint .`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the ngapp@1.0.0 lint script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2018-06-03T10_07_43_199Z-debug.log
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ eslint . help
+Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngapp/.eslintrc.yml
+Error: Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngapp/.eslintrc.yml
+    at ModuleResolver.resolve (/usr/lib/node_modules/eslint/lib/util/module-resolver.js:74:19)
+    at resolve (/usr/lib/node_modules/eslint/lib/config/config-file.js:479:28)
+    at load (/usr/lib/node_modules/eslint/lib/config/config-file.js:551:26)
+    at configExtends.reduceRight (/usr/lib/node_modules/eslint/lib/config/config-file.js:425:36)
+    at Array.reduceRight (<anonymous>)
+    at applyExtends (/usr/lib/node_modules/eslint/lib/config/config-file.js:403:26)
+    at loadFromDisk (/usr/lib/node_modules/eslint/lib/config/config-file.js:523:22)
+    at Object.load (/usr/lib/node_modules/eslint/lib/config/config-file.js:559:20)
+    at Config.getLocalConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:227:44)
+    at Config.getConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:179:43)
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ eslint --fix .
+Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngapp/.eslintrc.yml
+Error: Cannot find module 'eslint-config-airbnb-base'
+Referenced from: /home/ubuntu/Desktop/ngapp/.eslintrc.yml
+    at ModuleResolver.resolve (/usr/lib/node_modules/eslint/lib/util/module-resolver.js:74:19)
+    at resolve (/usr/lib/node_modules/eslint/lib/config/config-file.js:479:28)
+    at load (/usr/lib/node_modules/eslint/lib/config/config-file.js:551:26)
+    at configExtends.reduceRight (/usr/lib/node_modules/eslint/lib/config/config-file.js:425:36)
+    at Array.reduceRight (<anonymous>)
+    at applyExtends (/usr/lib/node_modules/eslint/lib/config/config-file.js:403:26)
+    at loadFromDisk (/usr/lib/node_modules/eslint/lib/config/config-file.js:523:22)
+    at Object.load (/usr/lib/node_modules/eslint/lib/config/config-file.js:559:20)
+    at Config.getLocalConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:227:44)
+    at Config.getConfigHierarchy (/usr/lib/node_modules/eslint/lib/config.js:179:43)
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ npm run lint
+
+> ngapp@1.0.0 lint /home/ubuntu/Desktop/ngapp
+> eslint --fix .
+
+
+/home/ubuntu/Desktop/ngapp/app.spec.js
+  11:9  warning  Unexpected console statement  no-console
+
+/home/ubuntu/Desktop/ngapp/bin/www.js
+  4:3  warning  Unexpected console statement  no-console
+
+✖ 2 problems (0 errors, 2 warnings)
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ npm run lint
+
+> ngapp@1.0.0 lint /home/ubuntu/Desktop/ngapp
+> eslint --fix .
+
+
+/home/ubuntu/Desktop/ngapp/bin/www.js
+  4:3  warning  Unexpected console statement  no-console
+
+✖ 1 problem (0 errors, 1 warning)
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ npm run lint
+
+> ngapp@1.0.0 lint /home/ubuntu/Desktop/ngapp
+> eslint --fix .
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ mocha app.spec.js
+Warning: Could not find any test files matching pattern: app.spec.js
+No test files found
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp/bin$ cd ..
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ mocha app.spec.js
+
+
+  App
+    ✓ should return Pong when requested with ping
+
+
+  1 passing (32ms)
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ npm test
+
+> ngapp@1.0.0 test /home/ubuntu/Desktop/ngapp
+> mocha app.spec.js
+
+
+
+  App
+    ✓ should return Pong when requested with ping
+
+
+  1 passing (28ms)
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   app.js
+	modified:   app.spec.js
+	modified:   bin/www.js
+	modified:   package.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.gitlab-ci.yml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ git add .
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ git commit -am "CI integration with linting and mocha spec test"
+[master ba41912] CI integration with linting and mocha spec test
+ Committer: Ubuntu <ubuntu@ip-172-31-23-149.ec2.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 38 insertions(+), 26 deletions(-)
+ create mode 100644 .gitlab-ci.yml
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ git push origin master
+Counting objects: 8, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 1.14 KiB | 0 bytes/s, done.
+Total 8 (delta 2), reused 0 (delta 0)
+To git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git
+   b1a2eea..ba41912  master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ xclip -sel clip < ~/.ssh/id_rsa.pub
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ git remote add origin2 git@github.com:Maruthachala-Easwaran/first-app.git
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ git remote version
+error: Unknown subcommand: version
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ git remote -v
+origin	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git (fetch)
+origin	git@gitlab-cts.stackroute.in:MaruthachalaMoorthy.Easwaran/first-app.git (push)
+origin2	git@github.com:Maruthachala-Easwaran/first-app.git (fetch)
+origin2	git@github.com:Maruthachala-Easwaran/first-app.git (push)
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ git push origin2 master
+Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+Counting objects: 19, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (19/19), 17.62 KiB | 0 bytes/s, done.
+Total 19 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), done.
+To git@github.com:Maruthachala-Easwaran/first-app.git
+ * [new branch]      master -> master
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ ^C
+ubuntu@ip-172-31-23-149:~/Desktop/ngapp$ 
